@@ -6,6 +6,9 @@ jobs:
     Display-your-favorite-things:
         runs-on: ubuntu-latest
         steps:
+            - name: checkout code
+              uses: actions/checkout@v3
+              
             - name: Give permission to execute the file
               run: chmod +x ./favorite_things.sh
 
