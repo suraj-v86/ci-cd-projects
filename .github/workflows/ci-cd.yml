@@ -1,10 +1,19 @@
-name: Hello World!
+name: Add 2 numbers
 
 on: [push]
 
 jobs:
-    Hello-World:
+    Add-numbers:
         runs-on: ubuntu-latest
         steps:
-            - name: Say Hello World
-              run: echo "Hello World!"
+            - name: add 2 numbers
+              env:
+                NUMBER1: 34
+                NUMBER2: 23
+              run: |
+                number1=${NUMBER1}
+                number2=${NUMBER2}
+                sum=$(( NUMBER1 + NUMBER2 ))
+                echo "The sum of $NUMBER1 and $NUMBER2 is $sum"
+
+
