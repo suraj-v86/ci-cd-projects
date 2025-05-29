@@ -1,19 +1,16 @@
-name: Add 2 numbers
+name: Add 2 numbers using python
 
 on: [push]
 
 jobs:
-    Add-numbers:
+    Add-2-number-using-python:
         runs-on: ubuntu-latest
         steps:
-            - name: add 2 numbers
+            - name: Add 2 numbers using python
               env:
-                NUMBER1: 34
-                NUMBER2: 23
+                a: 35
+                b: 26
               run: |
-                number1=${NUMBER1}
-                number2=${NUMBER2}
-                sum=$(( number1 + number2 ))
-                echo "The sum of $number1 and $number2 is $sum"
-
+                sum = a + b
+                print (sum)  
 
