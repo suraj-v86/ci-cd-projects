@@ -1,6 +1,16 @@
 name: Deploy EC2 server in AWS
 
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+        action:
+            description: 'Select Terraform action'
+            required: true
+            default: plan
+            type: choice
+            options:
+                - apply
+                - destroy  
 
 jobs:
     Deploy-EC2-Server-in-AWS:
@@ -24,8 +34,16 @@ jobs:
             - name: Initialize Terraform
               run: terraform init
               
-            - name: Run Terraform Plan
+            - name: Run Terraform validate
+              run: terraform validate
+
+            - name: Run Terraform plan
               run: terraform plan
 
-            - name: Run Terraform apply
-              run: terraform apply -auto-approve  
+            - name: Execute Terraform ${{ github.event.inputs.action }}
+              run: |
+                if [[ "${{ github.event.inputs.action }}" == "apply" ]]; then
+                    terraform apply -auto-approve
+                elif [[ "{{ github.event.inputs.action }} == "destroy ]]; then
+                    terraform destroy -auto-approve
+                fi        
