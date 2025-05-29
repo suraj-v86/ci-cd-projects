@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Give permission to execute the file
-              run: chmod +X ./favorite_things.sh
+              run: chmod +x ./favorite_things.sh
 
             - name: Display your favorite things
               env:
