@@ -1,17 +1,13 @@
-name: Add 2 numbers using python
+name: run shell commands
 
 on: [push]
 
 jobs:
-    Add-2-number-using-python:
+    run-shell-commands:
         runs-on: ubuntu-latest
         steps:
-            - name: checkout code
-              uses: actions/checkout@v3
-
-            - name: Add 2 numbers using python
-              env:
-                a: 35
-                b: 26
-              run: python ./sum.py  
-
+            - name: run-shell-commands
+              run: |
+                pwd
+                ls -ltr
+                free -m
