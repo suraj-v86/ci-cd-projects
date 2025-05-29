@@ -13,7 +13,7 @@ jobs:
               run: |
                 number1=${NUMBER1}
                 number2=${NUMBER2}
-                sum=$(( NUMBER1 + NUMBER2 ))
-                echo "The sum of $NUMBER1 and $NUMBER2 is $sum"
+                sum=$(( number1 + number2 ))
+                echo "The sum of $number1 and $number2 is $sum"
 
 
