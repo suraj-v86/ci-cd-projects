@@ -10,7 +10,5 @@ jobs:
               env:
                 a: 35
                 b: 26
-              run: |
-                sum = a + b
-                print (sum)  
+              run: python ./sum.py  
 
