@@ -6,7 +6,7 @@ on:
         action:
             description: 'Select Terraform action'
             required: true
-            default: plan
+            default: apply
             type: choice
             options:
                 - apply
